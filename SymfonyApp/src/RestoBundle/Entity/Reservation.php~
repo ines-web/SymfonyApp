@@ -5,12 +5,12 @@ namespace RestoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Plat
+ * Reservation
  *
- * @ORM\Table(name="plat")
- * @ORM\Entity(repositoryClass="RestoBundle\Repository\PlatRepository")
+ * @ORM\Table(name="reservation")
+ * @ORM\Entity(repositoryClass="RestoBundle\Repository\ReservationRepository")
  */
-class Plat
+class Reservation
 {
     /**
      * @var int
@@ -21,27 +21,26 @@ class Plat
      */
     private $id;
 
-    /**
+     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
      */
     private $nom;
 
-    /**
+        /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="prenom",type="string", length=255)
      */
-    private $description;
+    private $prenom;
 
-    /**
-     * @var float
+          /**
+     * @var string
      *
-     * @ORM\Column(name="prix", type="float")
+     * @ORM\Column(name="heure", type="date")
      */
-    private $prix;
-
+    private $heure;
 
     /**
      * Get id
@@ -58,7 +57,7 @@ class Plat
      *
      * @param string $nom
      *
-     * @return Plat
+     * @return Reservation
      */
     public function setNom($nom)
     {
@@ -78,50 +77,50 @@ class Plat
     }
 
     /**
-     * Set description
+     * Set prenom
      *
-     * @param string $description
+     * @param string $prenom
      *
-     * @return Plat
+     * @return Reservation
      */
-    public function setDescription($description)
+    public function setPrenom($prenom)
     {
-        $this->description = $description;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get prenom
      *
      * @return string
      */
-    public function getDescription()
+    public function getPrenom()
     {
-        return $this->description;
+        return $this->prenom;
     }
 
     /**
-     * Set prix
+     * Set heure
      *
-     * @param float $prix
+     * @param \DateTime $heure
      *
-     * @return Plat
+     * @return Reservation
      */
-    public function setPrix($prix)
+    public function setHeure($heure)
     {
-        $this->prix = $prix;
+        $this->heure = $heure;
 
         return $this;
     }
 
     /**
-     * Get prix
+     * Get heure
      *
-     * @return float
+     * @return \DateTime
      */
-    public function getPrix()
+    public function getHeure()
     {
-        return $this->prix;
+        return $this->heure;
     }
 }

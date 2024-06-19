@@ -1,0 +1,33 @@
+{% extends '@Resto/Default/base.html.twig' %}
+{% block body %}
+<div class="container form-ajout">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-12">
+            <div class="card mt-5">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="card-title">Ajouter un Plat</h4>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                    <div class="form-group">
+                        {{ form_label(form.nom, 'Nom', {'label_attr': {'class': 'form-label text-white'}}) }}
+                        {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.description, 'Description', {'label_attr': {'class': 'form-label text-white'}}) }}
+                        {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.prix, 'Prix', {'label_attr': {'class': 'form-label text-white'}}) }}
+                        {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group text-center">
+                        <input class="btn btn-success mt-3" type="submit" value="Ajouter" />
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

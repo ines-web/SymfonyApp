@@ -1,3 +1,11 @@
 resto_homepage:
     path:     /
     defaults: { _controller: RestoBundle:Default:index }
+
+ajout_plat:
+    path:     /ajout-plat
+    defaults: { _controller: RestoBundle:Plat:ajout }
+
+reservation_path:
+    resource:   "@RestoBundle/Resources/config/routing/reservation.yml"
+    prefix: /reservation
